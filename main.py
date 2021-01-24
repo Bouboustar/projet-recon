@@ -23,7 +23,11 @@ def main():
     elif choix == 2 :
         print("Bienvenue dans le mode reconnaissance")
         
-        
+        # appel de la fonction detection avec retour de l'image detecté
+        #face = detection()
+        #mise en forme de l'image 
+        #face = format(face)
+        #comparaison avec la base de donnée
         
         
         
