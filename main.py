@@ -1,5 +1,5 @@
 #Imports
-
+ @import detection.py
 
 
 #Main program
@@ -11,8 +11,11 @@ def main():
         print("Bienvenue dans le mode enregistrement")
         
         # appel de la fonction detection avec retour de l'image detecté
+        #face = detection()
         #mise en forme de l'image 
+        #face = format(face)
         #enregistrement de l'image
+        #
         
 
     elif choix == 2 :
