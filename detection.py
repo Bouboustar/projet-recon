@@ -5,7 +5,7 @@ import cv2
 import sys
 
 
-cascPath = sys.argv[1]
+cascPath = r'./opencv-xml/haarcascade_frontalface_default.xml'
 faceCascade = cv2.CascadeClassifier(cascPath)
 
 video_capture = cv2.VideoCapture(0)
