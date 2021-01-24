@@ -27,6 +27,10 @@ def detection():
             flags=cv2.CASCADE_SCALE_IMAGE
         )
         
+# ajout d'un rectangle pour encadré le visage
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
