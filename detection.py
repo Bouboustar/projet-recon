@@ -5,6 +5,9 @@ import cv2
 import sys
 
 
+
+
+# Programme
 cascPath = r'./opencv-xml/haarcascade_frontalface_default.xml'
 faceCascade = cv2.CascadeClassifier(cascPath)
 
@@ -21,7 +24,7 @@ while True:
         scaleFactor=1.1,
         minNeighbors=5,
         minSize=(30, 30),
-        flags=cv2.cv.CV_HAAR_SCALE_IMAGE
+        flags=cv2.CASCADE_SCALE_IMAGE
     )
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -30,6 +33,3 @@ while True:
 # Arret de la capture
 video_capture.release()
 cv2.destroyAllWindows()
-
-
-# Programme
