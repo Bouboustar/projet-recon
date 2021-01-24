@@ -1,5 +1,5 @@
 #Imports
- @import detection.py
+ import detection.py
 
 
 #Main program
