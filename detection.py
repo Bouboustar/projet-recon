@@ -31,5 +31,6 @@ while True:
         break
 
 # Arret de la capture
+return faces
 video_capture.release()
 cv2.destroyAllWindows()
