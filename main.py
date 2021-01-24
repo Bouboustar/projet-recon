@@ -10,13 +10,11 @@ def main():
     if choix == 1 :
         print("Bienvenue dans le mode enregistrement")
         
+        # appel de la fonction detection avec retour de l'image detecté
+        #mise en forme de l'image 
+        #enregistrement de l'image
         
-        
-        
-        
-        
-        
-        
+
     elif choix == 2 :
         print("Bienvenue dans le mode reconnaissance")
         
@@ -25,7 +23,7 @@ def main():
         
         
         
-        
+   
         
         
         
