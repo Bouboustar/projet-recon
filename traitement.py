@@ -8,14 +8,14 @@ import os
 class FaceCropper(object):
     CASCADE_PATH = "data/haarcascades/haarcascade_frontalface_default.xml"
 
-    def __init__(self):
-        self.face_cascade = cv2.CascadeClassifier(self.CASCADE_PATH)
+    '''def __init__(self):'''
+    self.face_cascade = cv2.CascadeClassifier(self.CASCADE_PATH)
 
-    def generate(self, image_path, show_result):
+    '''def generate(self, image_path, show_result):
         img = cv2.imread(image_path)
         if (img is None):
             print("Can't open image file")
-            return 0
+            return 0'''
 
         #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = self.face_cascade.detectMultiScale(img, 1.1, 3, minSize=(100, 100))
@@ -50,12 +50,13 @@ class FaceCropper(object):
 
 
 if __name__ == '__main__':
-    args = sys.argv
-    argc = len(args)
+    FaceCropper()
+ """  args = sys.argv
+   argc = len(args)
 
     if (argc != 2):
         print('Usage: %s [image file]' % args[0])
         quit()
 
     detecter = FaceCropper()
-    detecter.generate(args[1], True)
+    detecter.generate(args[1], True) """
