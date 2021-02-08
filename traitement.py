@@ -11,7 +11,7 @@ class FaceCropper(object):
     def __init__(self):
         self.face_cascade = cv2.CascadeClassifier(self.CASCADE_PATH)
 
-    ef generate(self, image_path, show_result):
+    def generate(self, image_path, show_result):
         img = cv2.imread(image_path)
         if (img is None):
             print("Can't open image file")
