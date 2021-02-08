@@ -5,7 +5,7 @@ import sys
 import os
 
 
-class FaceCropper(object):
+def FaceCropper(object):
     CASCADE_PATH = "data/haarcascades/haarcascade_frontalface_default.xml"
 
     '''def __init__(self):'''
