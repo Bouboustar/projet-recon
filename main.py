@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 #Imports
- import detection
- import traitement
+from detection import detection
+from enregistrement import enregistrement
+import cv2
 
 
 #Main program
@@ -12,11 +13,13 @@ def main():
     
     if choix == 1 :
         print("Bienvenue dans le mode enregistrement")
+        video_capture = cv2.VideoCapture(0)
         
         # appel de la fonction detection avec retour de l'image detecté
-        face = detection()
+        face = detection(video_capture)
         #mise en forme de l'image 
-        face = traitement.FaceCropper(face)
+        nom = input("Nom de la personne : ")
+        face = enregistrement(face,nom)
         #enregistrement de l'image
         #
         
