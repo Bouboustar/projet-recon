@@ -11,6 +11,7 @@ known_faces_filenames = []
 for (dirpath, dirnames, filenames) in os.walk('assets/img/users/'):
     known_faces_filenames.extend(filenames)
     break
+    
 for filename in known_faces_filenames:
     face = face_recognition.load_image_file('assets/img/users/' + filename)
     known_face_names.append(re.sub("[0-9]",'', filename[:-4]))
@@ -19,22 +20,25 @@ face_locations = []
 face_encodings = []
 face_names = []
 process_this_frame = True
+
 while True:
     frame = video_capture.read()
     if process_this_frame:
         face_locations = face_recognition.face_locations(frame)
         face_encodings = face_recognition.face_encodings(frame, face_locations)
         face_names = []
- for face_encoding in face_encodings: 
-            matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
-            name = "Unknown"
-            face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
-            best_match_index = np.argmin(face_distances)
-            if matches[best_match_index]:
-                name = known_face_names[best_match_index]
- face_names.append(name)      
+        
+    for face_encoding in face_encodings: 
+        matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+        name = "Unknown"
+        face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
+        best_match_index = np.argmin(face_distances)
+        if matches[best_match_index]:
+            name = known_face_names[best_match_index]
+            face_names.append(name)
     process_this_frame = not process_this_frame
-           for (top, right, bottom, left), name in zip(face_locations, face_names):
+    
+    for (top, right, bottom, left), name in zip(face_locations, face_names):
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1) 
