@@ -20,8 +20,8 @@ def compare(video_capture):
         #print(known_face_names)
         known_face = face_recognition.face_encodings(face)[0]
         known_face_encodings.append(known_face)
-        print("Known face encodings ")
-        print(known_face_encodings)
+        #print("Known face encodings ")
+        #print(known_face_encodings)
     face_locations = []
     face_encodings = []
     face_names = []
@@ -37,13 +37,13 @@ def compare(video_capture):
             matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
             name = "Unknown"
             face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
-            print("Face encoding")
-            print(face_encoding)
-            print("Face distances : ")
-            print(face_distances)
+            #print("Face encoding")
+            #print(face_encoding)
+            #print("Face distances : ")
+            #print(face_distances)
             best_match_index = np.argmin(face_distances)
-            print("best index")
-            print(best_match_index)
+            #print("best index")
+            #print(best_match_index)
             if matches[best_match_index]:
                 name = known_face_names[best_match_index]
                 face_names.append(name)      
