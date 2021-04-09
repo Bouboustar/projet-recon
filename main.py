@@ -3,6 +3,7 @@
 #Imports
 from detection import detection
 from enregistrement import enregistrement
+from compare import compare
 import cv2
 
 
@@ -26,6 +27,8 @@ def main():
 
     elif choix == 2 :
         print("Bienvenue dans le mode reconnaissance")
+        video_capture = cv2.VideoCapture(0)
+        visage = compare(video_capture)
         
         # appel de la fonction detection avec retour de l'image detecté
         #face = detection()
